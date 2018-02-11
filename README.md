@@ -198,7 +198,7 @@ It's that simple. And when it comes time to scale the application, all you have 
 I know right?
 
 
-## Contributing
+# Contributing
 
 You may make a pull request and start contributing or join Rotaract Club of Colombo Mid Town and become a offcial contributor via the development team
 
