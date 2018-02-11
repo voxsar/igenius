@@ -200,4 +200,25 @@ I know right?
 
 ## Contributing
 
-You don't.
+You may make a pull request and start contributing or join Rotaract Club of Colombo Mid Town and become a offcial contributor via the development team
+
+## Authors
+
+* **Miyuru Sangith Dharmage** - *Initial work* - [voxsar](https://github.com/voxsar)
+* **Zayan Jiffry**
+* **Malesha Rathnaduria**
+* **Nilisha Ishangi**
+* **Basith Sameer**
+* **Nafli Mufthi**
+* **Malshani Nanayakkara**
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the Apache Software 3.0 - see the [LICENSE](LICENSE) file for details
+
+## Acknowledgments
+
+* Hats of to Zayan who helped conceive the idea of iGenius
+* Also thanks to the Rotaract Club of Faculty of Management and Finance our sister club who use to co host this project with us
