@@ -1,4 +1,4 @@
-# iGenius Official Repository
+# iGenius Official Repository [![Build Status](https://travis-ci.org/voxsar/igenius.svg?branch=master)](https://travis-ci.org/voxsar/igenius)
 The offcial repository for iGenius Application, inlcuding the website, messenger bot, quiz master and future implementation for mobile application
 This repository is currently holds all the versions develop for Rotaract Club of Colombo Mid Town, the system is open source and can be reused but the branding, logo and concept is the property of the Rotaract Club of Colombo Mid Town
 
