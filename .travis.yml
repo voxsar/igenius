@@ -21,8 +21,10 @@ matrix:
         - npm run dist
         - ls
         - cd dist
+        - ls
       release:
         - exit 0
+        
   
     
 notifications:
