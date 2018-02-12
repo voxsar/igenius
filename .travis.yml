@@ -2,6 +2,27 @@
 matrix:
   include:
     #android app 
+    - language: generic
+      node_js:
+        - 6.9.1
+      sudo: true
+      branches:
+        only:
+          - master
+      install:
+        - sudo apt-get install npm
+        - cd quiz-master
+        - sudo npm install
+        - sudo npm install -g n
+        - sudo n stable
+        - sudo npm install electron-builder --save-dev
+      script:
+        #- sudo cordova prepare
+        - npm run dist
+      release:
+        - exit 0
+  
+    #android app 
     - language: android
       jdk: oraclejdk8
       node_js:
