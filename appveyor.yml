@@ -35,13 +35,13 @@ install:
   - echo This is batch
   # batch commands start from cmd: 
   - cmd: cd genius-app
-  - cmd: npm install
+  - cmd: npm install -g
   - cmd: npm install -g cordova
   - cmd: cordova platform add windows
   - cmd: cordova build windows -- --appx=uap
   #- cmd: copy C:\projects\igenius\genius-app\platforms\windows\AppPackages\CordovaApp.Windows10_1.0.0.0_anycpu_debug_Test\CordovaApp.Windows10_1.0.0.0_anycpu_debug.appx C:\projects\igenius
 build_script:
-  - project: C:\projects\igenius\genius-app\platforms\windows\CordovaApp.Windows10.jsproj
+  - cmd: C:\Windows\Microsoft.NET\Framework\v3.5\msbuild C:\projects\igenius\genius-app\platforms\windows\CordovaApp.Windows10.jsproj /p:Configuration=Debug
   - cmd: cordova build windows -- --appx=uap
   #- cmd: copy C:\projects\igenius\genius-app\platforms\windows\AppPackages\CordovaApp.Windows10_1.0.0.0_anycpu_debug_Test\CordovaApp.Windows10_1.0.0.0_anycpu_debug.appx C:\projects\igenius
   - cmd: cd ..
