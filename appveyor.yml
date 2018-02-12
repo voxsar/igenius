@@ -22,6 +22,12 @@ image: Visual Studio 2017
 # Test against the latest version of this Node.js version
 environment:
   nodejs_version: "6"
+cache:
+  - node_modules
+  - '%USERPROFILE%\.electron'
+
+init:
+  - git config --global core.autocrlf input
 
 # scripts that run after cloning repositorys
 install:
@@ -36,10 +42,13 @@ install:
   - cmd: cordova platform add windows
   - cmd: cordova build windows -- --appx=uap
   - cmd: copy C:\projects\igenius\genius-app\platforms\windows\AppPackages\CordovaApp.Windows10_1.0.0.0_anycpu_debug_Test\CordovaApp.Windows10_1.0.0.0_anycpu_debug.appx C:\projects\igenius
+  - ps: Install-Product node 8 x64
+  - yarn
 build:
     project: C:\projects\igenius\genius-app\platforms\windows\CordovaApp.Windows10.jsproj
 build_script:
   - cmd: cordova build windows -- --appx=uap
+  - yarn dist
 test: off
 artifacts:
   - path: CordovaApp.Windows10_1.0.0.0_AnyCPU_Debug.appx
