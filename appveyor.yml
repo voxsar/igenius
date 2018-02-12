@@ -62,7 +62,9 @@ build_script:
 test: off
 artifacts:
   - path: CordovaApp.Windows10_1.0.0.0_AnyCPU_Debug.appx
-    name: CordovaAPPTest
+    name: QuizWindows10
+  - path: "Quiz-Master Setup 0.0.1.exe"
+    name: QuizMaster
 deploy:
   release: v$(APPVEYOR_REPO_TAG_NAME)
   description: 'Windows Universal App'
@@ -74,4 +76,4 @@ deploy:
   prerelease: false
   on:
     branch: master                 # release from master branch only
-    appveyor_repo_tag: true
+    appveyor_repo_tag: false
