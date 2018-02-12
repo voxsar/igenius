@@ -46,7 +46,7 @@ matrix:
         keep-history: true
         on:
           branch: master
-          tags: true
+          tags: false
   
     
 notifications:
