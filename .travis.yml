@@ -42,7 +42,107 @@ matrix:
         on:
           branch: master
           tags: false
+          
+    #android app 
+    - language: android
+      jdk: oraclejdk8
+      node_js:
+        - 6.9.1
+      sudo: true
+      branches:
+        only:
+          - master
+      android:
+        components:
+          - build-tools-26.0.2
+      install:
+        - sudo apt-get install npm
+        - sudo apt-get install node
+        - cd genius-app
+        - sudo npm install
+        - sudo npm cache clean
+        - sudo npm install -g cordova
+        - echo y | android update sdk -u --filter android-22,android-26
+        - sudo npm cache clean -f
+        - sudo npm install -g n
+        - sudo n stable
+        - cordova build
+      script:
+        #- sudo cordova prepare
+        - sudo cordova build android --release
+      release:
+        - exit 0
+      before_deploy:
+        cp -R "/home/travis/build/voxsar/igenius/genius-app/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk" $TRAVIS_BUILD_DIR
+      deploy:
+        provider: releases
+        skip-cleanup: true
+        api_key:
+          secure: $GITHUB_TOKEN # Set in travis-ci.org dashboard, marked secure GITHUB_TOKEN
+        file: $TRAVIS_BUILD_DIR/app-release-unsigned.apk
+        name: "$TRAVIS_TAG"
+        body: "## $TRAVIS_TAG
+              version $TRAVIS_TAG released from $TRAVIS_REPO_SLUG 
+              Released on successful build on Travis CI via deployment contains the
+              - iOS APK unsigned for testing
+              - Android unsigned APK for testing
+              *Build initated from $TRAVIS_COMMIT*
+              #### Feature Releases
+              - Improve the CI Features
+              #### Bug Fixes
+              - Fixed the yml files for travis
+              - Fixed the yml files for appveyor"
+        draft: false
+        keep-history: true
+        on:
+          branch: master
+          tags: true
   
+    #ios deployment test | works but sandboxed debug file cannot be used
+    - language: objective-c
+      os: osx
+      osx_image: xcode9.2
+      install:
+        - brew install npm
+        - brew install node
+        - cd genius-app
+        - sudo npm install
+        - sudo npm cache clean
+        - sudo npm install -g cordova
+        - sudo npm cache clean -f
+        - sudo npm install -g n
+        - sudo n stable
+        #- cordova build
+      script:
+        - echo y | sudo cordova platform add ios --no-insight
+        - sudo cordova build ios --release --no-insight
+      release:
+        - exit 0
+      before_deploy:
+        - zip -r $TRAVIS_BUILD_DIR/genius-app.zip "/Users/travis/build/voxsar/igenius/genius-app/platforms/ios/build/emulator/genius-app.app"
+      deploy:
+        provider: releases
+        skip-cleanup: true
+        api_key:
+          secure: $GITHUB_TOKEN # Set in travis-ci.org dashboard, marked secure GITHUB_TOKEN
+        file: $TRAVIS_BUILD_DIR/genius-app.zip
+        name: "$TRAVIS_TAG"
+        body: "## $TRAVIS_TAG
+              version $TRAVIS_TAG released from $TRAVIS_REPO_SLUG 
+              Released on successful build on Travis CI via deployment contains the
+              - iOS APK unsigned for testing
+              - Android unsigned APK for testing
+              *Build initated from $TRAVIS_COMMIT*
+              #### Feature Releases
+              - Improve the CI Features
+              #### Bug Fixes
+              - Fixed the yml files for travis
+              - Fixed the yml files for appveyor"
+        draft: false
+        keep-history: true
+        on:
+          branch: master
+          tags: true
 cache:
   directories:
   - node_modules
