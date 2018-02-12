@@ -14,7 +14,7 @@
   "build": {
     "appId": "yourappid",
     "win": {
-      "target": "squirrel",
+      "target": "nsis",
       "icon": "build/icon.ico"
     }
   },
