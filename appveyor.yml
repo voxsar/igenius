@@ -48,6 +48,8 @@ build:
     project: C:\projects\igenius\genius-app\platforms\windows\CordovaApp.Windows10.jsproj
 build_script:
   - cmd: cordova build windows -- --appx=uap
+  - cmd: cd ..
+  - cmd: cd quiz-master
   - yarn dist
 test: off
 artifacts:
