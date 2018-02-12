@@ -58,12 +58,12 @@ build_script:
   - yarn dist
   - cmd: copy "C:\projects\igenius\quiz-master\dist\Quiz-Master Setup 0.0.1.exe" C:\projects\igenius
   - cmd: dir C:\projects\igenius\quiz-master\dist\
+  - cmd: 7z a myapp.zip "CordovaApp.Windows10_1.0.0.0_AnyCPU_Debug.appx"
+  - cmd: 7z a myapp.zip "Quiz-Master Setup 0.0.1.exe"
 test: off
 artifacts:
-  - path: CordovaApp.Windows10_1.0.0.0_AnyCPU_Debug.appx
+  - path: myapp.zip
     name: QuizWindows10
-  - path: "Quiz-Master Setup 0.0.1.exe"
-    name: QuizMaster
 deploy:
   release: v$(APPVEYOR_REPO_TAG_NAME)
   description: 'Windows Universal App'
