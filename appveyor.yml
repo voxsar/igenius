@@ -35,7 +35,7 @@ install:
   - cmd: npm install -g cordova
   - cmd: cordova platform add windows
   - cmd: cordova build windows -- --appx=uap
-  - cmd: copy C:\projects\igenius\genius-app\platforms\windows\AppPackages\CordovaApp.Windows10_1.0.0.0_anycpu_debug_Test\CordovaApp.Windows10_1.0.0.0_anycpu_debug.appx C:\projects\rotaract3220app
+  - cmd: copy C:\projects\igenius\genius-app\platforms\windows\AppPackages\CordovaApp.Windows10_1.0.0.0_anycpu_debug_Test\CordovaApp.Windows10_1.0.0.0_anycpu_debug.appx C:\projects\igenius
 build:
     project: C:\projects\igenius\genius-app\platforms\windows\CordovaApp.Windows10.jsproj
 test: off
