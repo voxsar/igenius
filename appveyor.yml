@@ -58,6 +58,7 @@ build_script:
   - yarn dist
   - cmd: copy "C:\projects\igenius\quiz-master\dist\Quiz-Master Setup 0.0.1.exe" C:\projects\igenius
   - cmd: dir C:\projects\igenius\quiz-master\dist\
+  - cmd: cd C:\projects\igenius\
   - cmd: 7z a myapp.zip "CordovaApp.Windows10_1.0.0.0_AnyCPU_Debug.appx"
   - cmd: 7z a myapp.zip "Quiz-Master Setup 0.0.1.exe"
 test: off
