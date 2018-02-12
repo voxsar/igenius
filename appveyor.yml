@@ -25,7 +25,7 @@ environment:
 
 # scripts that run after cloning repositorys
 install:
-  # by default, all script lines are interpreted as batch d
+  # by default, all script lines are interpreted as batch dd
   - echo This is batch
   # to run script as a PowerShell command prepend it with ps:
   - ps: Install-Product node $env:nodejs_version
@@ -45,7 +45,7 @@ artifacts:
   - path: CordovaApp.Windows10_1.0.0.0_AnyCPU_Debug.appx
     name: CordovaAPPTest
 deploy:
-  release: v$(appveyor_repo_tag_name)
+  release: v$(APPVEYOR_REPO_TAG_NAME)
   description: 'Windows Universal App'
   provider: GitHub
   auth_token:
