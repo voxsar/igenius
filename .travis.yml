@@ -20,6 +20,7 @@ matrix:
         #- sudo cordova prepare
         - npm run dist
         - electron-builder -mwl
+        - npm run dist -mwl
       release:
         - exit 0
       before_deploy:
