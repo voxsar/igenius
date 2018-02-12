@@ -38,8 +38,8 @@ install:
   - echo This is batch
   # batch commands start from cmd: 
   - cmd: cd genius-app
-  - cmd: if [ -d C:\Users\appveyor\AppData\Roaming\npm\node_modules ]; then echo "ok"; else npm install -g; fi 
-  - cmd: if [ -d C:\Users\appveyor\AppData\Roaming\npm\cordova ]; then echo "ok"; else npm install -g cordova; fi
+  - cmd: IF EXIST C:\Users\appveyor\AppData\Roaming\npm\node_modules THEN (echo "ok") ELSE (npm install -g)
+  - cmd: if EXIST C:\Users\appveyor\AppData\Roaming\npm\cordova THEN (echo "ok") ELSE npm install -g cordova
   - cmd: cordova plugin remove cordova-plugin-browsersync
   - cmd: cordova platform add windows
   - cmd: cordova build windows -- --appx=uap
