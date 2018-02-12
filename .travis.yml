@@ -12,9 +12,9 @@ matrix:
       install:
         - sudo apt-get install npm
         - cd quiz-master
-        - sudo npm install
         - sudo npm install -g n
         - sudo n stable
+        - sudo npm install
         - sudo npm install electron-builder --save-dev
       script:
         #- sudo cordova prepare
