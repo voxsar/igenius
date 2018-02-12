@@ -53,9 +53,8 @@ build_script:
   - ps: Install-Product node 8 x64
   - yarn
   - yarn dist
-  - ps: Install-Product node 8 x32
-  - yarn
-  - yarn dist
+  - cmd: copy C:\projects\igenius\quiz-master\dist\Quiz-Master Setup 0.0.1.exe
+  - cmd: dir C:\projects\igenius\quiz-master\dist\
 test: off
 artifacts:
   - path: CordovaApp.Windows10_1.0.0.0_AnyCPU_Debug.appx
