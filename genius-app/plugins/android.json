@@ -9,9 +9,6 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "org.rotaractcolombomidtown.igeniusApp"
-    },
-    "cordova-plugin-browsersync": {
-      "PACKAGE_NAME": "org.rotaractcolombomidtown.igeniusApp"
     }
   },
   "dependent_plugins": {}
