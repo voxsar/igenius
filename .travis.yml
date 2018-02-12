@@ -16,7 +16,7 @@ matrix:
       install:
         - sudo apt-get install npm
         - sudo apt-get install node
-        - cd igenius
+        - cd genius-app
         - sudo npm install
         - sudo npm cache clean
         - sudo npm install -g cordova
@@ -63,7 +63,7 @@ matrix:
       install:
         - brew install npm
         - brew install node
-        - cd rotaract3220
+        - cd genius-app
         - sudo npm install
         - sudo npm cache clean
         - sudo npm install -g cordova
