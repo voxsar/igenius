@@ -5,6 +5,9 @@ matrix:
     - language: generic
       node_js:
         - 6.9.1
+      env:
+        - ELECTRON_CACHE=$HOME/.cache/electron
+        - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
       sudo: true
       branches:
         only:
@@ -50,7 +53,12 @@ matrix:
           branch: master
           tags: false
   
-    
+cache:
+  directories:
+  - node_modules
+  - $HOME/.cache/electron
+  - $HOME/.cache/electron-builder
+  
 notifications:
   email: false
  
