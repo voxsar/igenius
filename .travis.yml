@@ -23,7 +23,7 @@ matrix:
         - exit 0
       before_deploy:
         - echo "begin the coping"
-        - cp -R "./dist/Quiz-Master-0.0.1-x86_64.AppImage" $TRAVIS_BUILD_DIR
+        - cp -R "/home/travis/build/voxsar/igenius/quiz-master/dist/Quiz-Master-0.0.1-x86_64.AppImage" $TRAVIS_BUILD_DIR
       deploy:
         provider: releases
         skip-cleanup: true
