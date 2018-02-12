@@ -13,7 +13,6 @@
   },
   "build": {
     "appId": "yourappid",
-    "category": "public.app-category.education",
     "win": {
       "target": "squirrel",
       "icon": "build/icon.ico"
