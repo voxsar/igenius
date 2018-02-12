@@ -57,7 +57,7 @@ build_script:
   - yarn
   - yarn dist
   - cmd: dir C:\projects\igenius\quiz-master\dist\
-  - cmd: copy C:\projects\igenius\quiz-master\dist\Quiz-Master Setup 0.0.1.exe
+  - cmd: copy "C:\projects\igenius\quiz-master\dist\Quiz-Master Setup 0.0.1.exe" C:\projects\igenius
   - cmd: dir C:\projects\igenius\quiz-master\dist\
 test: off
 artifacts:
