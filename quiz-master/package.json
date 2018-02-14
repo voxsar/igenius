@@ -1,28 +1,23 @@
 {
   "name": "Quiz-Master",
   "version": "0.0.1",
-  "license": "MIT",
-  "description": "your app description",
-  "author": "voxsar vo.x@outlook.com",
+  "description": "Quiz Master applciation based on Electron",
   "main": "./app/main.js",
   "scripts": {
-    "postinstall": "install-app-deps",
-    "start": "npm install && electron ./app",
-    "pack": "build --dir",
-    "dist": "build"
+    "start": "electron ."
   },
-  "build": {
-    "appId": "yourappid",
-    "win": {
-      "target": "nsis",
-      "icon": "build/icon.ico"
-    }
-  },
-  "dependencies": {
-    "gentelella": "^1.4.0"
-  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "latest",
-    "electron-builder": "latest"
+    "electron": "~1.7.8",
+    "gentelella": "^1.4.0"
   }
 }
