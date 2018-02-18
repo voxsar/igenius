@@ -1,3 +1,7 @@
+environment:
+  nodejs_version: "6"
+  GITHUB_TOKEN:
+    secure: 3VuYvENsIR/k2gXPfn19F9UHaja7TLad6arKNcb15oT9R1dMnZ2y4dNCtLMmnOcM
 cache:
   - '%APPDATA%\npm-cache'
   - '%USERPROFILE%\.electron'
@@ -9,10 +13,7 @@ matrix:
   #Electron Shit
   - platform:
       - x64
-      environment:
-        nodejs_version: "6"
-        GITHUB_TOKEN:
-          secure: 3VuYvENsIR/k2gXPfn19F9UHaja7TLad6arKNcb15oT9R1dMnZ2y4dNCtLMmnOcM
+      
       install:
       - ps: Install-Product node $env:nodejs_version $env:platform
       - set PATH=%APPDATA%\npm;%PATH%
@@ -32,7 +33,6 @@ matrix:
     #Windows APP
   - environment:
       image: Visual Studio 2017
-      nodejs_version: "6"
       cache:
         - node_modules
         - '%USERPROFILE%\.electron'
