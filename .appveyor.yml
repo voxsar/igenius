@@ -18,8 +18,8 @@ branches:
 
 install:
   - ps: Install-Product node $env:nodejs_version $env:platform
-  - set PATH=%APPDATA%\npm;%PATH%
-  - cd quiz-master
+  - cmd: set PATH=%APPDATA%\npm;%PATH%
+  - cmd: cd quiz-master
   - cmd: npm install
   - cmd: npm update
     # by default, all script lines are interpreted as batch 
