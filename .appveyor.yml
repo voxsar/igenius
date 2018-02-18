@@ -1,7 +1,7 @@
 environment:
-  nodejs_version: "6"
   GITHUB_TOKEN:
     secure: 3VuYvENsIR/k2gXPfn19F9UHaja7TLad6arKNcb15oT9R1dMnZ2y4dNCtLMmnOcM
+  nodejs_version: "6"
 cache:
   - '%APPDATA%\npm-cache'
   - '%USERPROFILE%\.electron'
@@ -15,7 +15,7 @@ branches:
 
 install:
   - ps: Install-Product node $env:nodejs_version $env:platform
-  - cmd: set PATH=%APPDATA%\npm;%PATH%
+  #- cmd: set PATH=%APPDATA%\npm;%PATH%
   #- cmd: dir %APPDATA%\npm
   - cmd: cd quiz-master
   - cmd: npm install
