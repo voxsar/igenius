@@ -72,19 +72,19 @@ matrix:
       - cmd: cd C:\projects\igenius\
       - cmd: 7z a myapp.zip "CordovaApp.Windows10_1.0.0.0_AnyCPU_Debug.appx"
       - cmd: 7z a myapp.zip "Quiz-Master Setup 0.0.1.exe"
-      test: off
-      artifacts:
-        - path: myapp.zip
-          name: QuizWindows10
-      deploy:
-        release: v$(APPVEYOR_REPO_TAG_NAME)
-        description: 'Windows Universal App'
-        provider: GitHub
-        auth_token:
-          secure: c/lXAytCIOqiw0TYXn2QtcrMzjhSWbE0wO9M2CJiOy2v2QoS2aMWB4zTV2Ud6xbB # your encrypted token from GitHub
-          #/.*\.appx/            # upload all NuGet packages to release assets
-        draft: true
-        prerelease: false
-        on:
-          branch: master                 # release from master branch only
-          appveyor_repo_tag: true
+    test: off
+    artifacts:
+      - path: myapp.zip
+        name: QuizWindows10
+    deploy:
+      release: v$(APPVEYOR_REPO_TAG_NAME)
+      description: 'Windows Universal App'
+      provider: GitHub
+      auth_token:
+        secure: c/lXAytCIOqiw0TYXn2QtcrMzjhSWbE0wO9M2CJiOy2v2QoS2aMWB4zTV2Ud6xbB # your encrypted token from GitHub
+        #/.*\.appx/            # upload all NuGet packages to release assets
+      draft: true
+      prerelease: false
+      on:
+        branch: master                 # release from master branch only
+        appveyor_repo_tag: true
