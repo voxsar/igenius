@@ -18,8 +18,8 @@ branches:
 
 install:
   - ps: Install-Product node $env:nodejs_version $env:platform
-  - cmd: set PATH=%APPDATA%\Roaming\npm;%PATH%
-  - cmd: dir %APPDATA%\Roaming\npm
+  - cmd: set PATH=%APPDATA%\npm;%PATH%
+  - cmd: dir %APPDATA%\npm
   - cmd: cd quiz-master
   - cmd: npm install
   - cmd: npm update
