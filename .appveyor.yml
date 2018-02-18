@@ -78,7 +78,7 @@ deploy:
 
 matrix:
   #Electron Shit
-  - platform: x32
+  - platform: x86
   - platform: x64
 
 
