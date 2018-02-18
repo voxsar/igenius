@@ -1,5 +1,6 @@
 platform:
 - x64
+- x86
 environment:
   nodejs_version: "6"
   GITHUB_TOKEN:
@@ -12,7 +13,6 @@ cache:
 branches:
   only:
   - master
-  - /^v\d+\.\d+\.\d+/
 install:
 - ps: Install-Product node $env:nodejs_version $env:platform
 - set PATH=%APPDATA%\npm;%PATH%
