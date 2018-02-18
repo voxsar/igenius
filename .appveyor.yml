@@ -19,7 +19,7 @@ install:
   #- cmd: set PATH=%APPDATA%\npm;%PATH%
   #- cmd: dir %APPDATA%\npm
   - cmd: cd quiz-master
-  - cmd: npm install
+  - cmd: npm install -g
   - cmd: npm update
     # by default, all script lines are interpreted as batch 
   - cmd: cd ..
