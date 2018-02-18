@@ -16,7 +16,6 @@ branches:
   only:
   - master
 
-
 install:
   - ps: Install-Product node $env:nodejs_version $env:platform
   - set PATH=%APPDATA%\npm;%PATH%
@@ -76,10 +75,10 @@ deploy:
     branch: master                 # release from master branch only
     appveyor_repo_tag: true
 
-matrix:
-  #Electron Shit
-  - platform: x86
-  - platform: x64
+
+platform: 
+  -x86
+  -x64
 
 
       
