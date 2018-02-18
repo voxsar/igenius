@@ -4,7 +4,7 @@ platform:
 environment:
   nodejs_version: "6"
   GITHUB_TOKEN:
-    secure: K2qcsgKY6tzQWWrRQ6ulTZAjU3B/ujRpqb5qRMi/xxOk/pXTo35PaY7jOIQ5mVlM
+    secure: 8Wdonhsn/v6+fV2+F7ppIt5Sa0PuoYhWxJ8du0/icd3fwJG+XDy92jBJ36i6KKuo
 
 cache:
 - '%APPDATA%\npm-cache'
