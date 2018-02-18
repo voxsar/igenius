@@ -36,6 +36,7 @@ install:
 
 
 test_script:
+  -
   - node --version
   - npm --version
   - npm run make
@@ -74,11 +75,3 @@ deploy:
   on:
     branch: master                 # release from master branch only
     appveyor_repo_tag: true
-
-
-platform: 
-  -x86
-  -x64
-
-
-      
