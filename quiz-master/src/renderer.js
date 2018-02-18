@@ -1,7 +1,7 @@
 // This file is required by the index.html file and will
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
-// 043616abbd5c8bd44033bf4646d30e98af2d9e9a
+//
 const BrowserWindow = require('electron').remote.BrowserWindow
 const path = require('path')
 
