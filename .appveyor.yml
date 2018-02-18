@@ -3,16 +3,15 @@ environment:
   GITHUB_TOKEN:
     secure: 3VuYvENsIR/k2gXPfn19F9UHaja7TLad6arKNcb15oT9R1dMnZ2y4dNCtLMmnOcM
   image: Visual Studio 2017
-  cache:
-    - node_modules
-    - '%USERPROFILE%\.electron'
-    - C:\Users\appveyor\AppData\Roaming\npm\node_modules
-    - C:\Users\appveyor\AppData\Roaming\npm\cordova
-    - C:\Users\appveyor\AppData\Local\electron-builder
 cache:
   - '%APPDATA%\npm-cache'
   - '%USERPROFILE%\.electron'
   - node_modules
+  - node_modules
+  - '%USERPROFILE%\.electron'
+  - C:\Users\appveyor\AppData\Roaming\npm\node_modules
+  - C:\Users\appveyor\AppData\Roaming\npm\cordova
+  - C:\Users\appveyor\AppData\Local\electron-builder
 branches:
   only:
   - master
