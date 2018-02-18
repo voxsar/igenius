@@ -1,47 +1,45 @@
+addons:
+  apt:
+    packages:
+    - fakeroot
+    - rpm
 #lets see how this works | creates to build jobs 
 matrix:
   include:
-    #android app 
-    - language: generic
-      node_js:
-        - 6.9.1
-      env:
-        - ELECTRON_CACHE=$HOME/.cache/electron
-        - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
-      sudo: true
-      branches:
-        only:
-          - master
-      install:
-        - sudo apt-get install npm
-        - cd quiz-master
-        - sudo npm install -g n
-        - sudo n stable
-        #- sudo npm install
-        - sudo npm install electron-builder --save-dev
-      script:
-        #- sudo cordova prepare
-        - npm run dist
-        - electron-builder -mwl
-        - npm run dist --win --x64
-      release:
-        - exit 0
-      before_deploy:
-        - echo "begin the coping"
-        - cp -R "/home/travis/build/voxsar/igenius/quiz-master/dist/Quiz-Master-0.0.1-x86_64.AppImage" $TRAVIS_BUILD_DIR
-      deploy:
-        provider: releases
-        skip-cleanup: true
-        api_key:
-          secure: $GITHUB_TOKEN # Set in travis-ci.org dashboard, marked secure GITHUB_TOKEN
-        file: $TRAVIS_BUILD_DIR/Quiz-Master-0.0.1-x86_64.AppImage
-        name: "$TRAVIS_TAG"
-        body: "$TRAVIS_TAG version $TRAVIS_TAG released from $TRAVIS_REPO_SLUG"
-        draft: false
-        keep-history: true
-        on:
-          branch: master
-          tags: false
+    #Electron Publish for Linux and Mac OS
+    language: node_js
+    node_js: "6"
+    os:
+    - linux
+    - osx
+    dist: trusty
+    osx_image: xcode8.3
+    sudo: false
+
+    cache:
+      directories:
+      - node_modules
+      - $HOME/.cache/electron
+
+    addons:
+      apt:
+        packages:
+        - fakeroot
+        - rpm
+
+    branches:
+      only:
+      - master
+      - /^v\d+\.\d+\.\d+/
+
+    install:
+    - cd quiz-master
+    - npm install
+    - npm update
+
+    script:
+    - npm run make
+    after_success: npm run publish
           
     #android app 
     - language: android
@@ -147,7 +145,6 @@ cache:
   directories:
   - node_modules
   - $HOME/.cache/electron
-  - $HOME/.cache/electron-builder
   
 notifications:
   email: false
