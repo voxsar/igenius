@@ -7,8 +7,6 @@ cache:
   - '%APPDATA%\npm-cache'
   - '%USERPROFILE%\.electron'
   - node_modules
-  - node_modules
-  - '%USERPROFILE%\.electron'
   - C:\Users\appveyor\AppData\Roaming\npm\node_modules
   - C:\Users\appveyor\AppData\Roaming\npm\cordova
   - C:\Users\appveyor\AppData\Local\electron-builder
@@ -18,8 +16,8 @@ branches:
 
 install:
   - ps: Install-Product node $env:nodejs_version $env:platform
-  - cmd: set PATH=%APPDATA%\npm;%PATH%
-  - cmd: dir %APPDATA%\npm
+  #- cmd: set PATH=%APPDATA%\npm;%PATH%
+  #- cmd: dir %APPDATA%\npm
   - cmd: cd quiz-master
   - cmd: npm install
   - cmd: npm update
@@ -37,7 +35,6 @@ install:
 
 
 test_script:
-  -
   - node --version
   - npm --version
   - npm run make
