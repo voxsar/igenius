@@ -1,29 +1,90 @@
-platform:
-- x64
-environment:
-  nodejs_version: "6"
-  GITHUB_TOKEN:
-    secure: 3VuYvENsIR/k2gXPfn19F9UHaja7TLad6arKNcb15oT9R1dMnZ2y4dNCtLMmnOcM
 cache:
-- '%APPDATA%\npm-cache'
-- '%USERPROFILE%\.electron'
-- node_modules
+  - '%APPDATA%\npm-cache'
+  - '%USERPROFILE%\.electron'
+  - node_modules
 branches:
   only:
   - master
-install:
-- ps: Install-Product node $env:nodejs_version $env:platform
-- set PATH=%APPDATA%\npm;%PATH%
-- cd quiz-master
-- npm install
-- npm update
+matrix:
+  #Electron Shit
+  - platform:
+    - x64
+    environment:
+      nodejs_version: "6"
+      GITHUB_TOKEN:
+        secure: 3VuYvENsIR/k2gXPfn19F9UHaja7TLad6arKNcb15oT9R1dMnZ2y4dNCtLMmnOcM
+    install:
+    - ps: Install-Product node $env:nodejs_version $env:platform
+    - set PATH=%APPDATA%\npm;%PATH%
+    - cd quiz-master
+    - npm install
+    - npm update
 
-test_script:
-- cd quiz-master
-- node --version
-- npm --version
-#- npm run lint
-- npm run make
+    test_script:
+    - node --version
+    - npm --version
+    #- npm run lint
+    - npm run make
 
-build_script:
-- npm run publish
+    build_script:
+    - npm run publish
+
+    #Windows APP
+    image: Visual Studio 2017
+    environment:
+    nodejs_version: "6"
+    cache:
+      - node_modules
+      - '%USERPROFILE%\.electron'
+      - C:\Users\appveyor\AppData\Roaming\npm\node_modules
+      - C:\Users\appveyor\AppData\Roaming\npm\cordova
+      - C:\Users\appveyor\AppData\Local\electron-builder
+
+    init:
+      #- git config --global core.autocrlf input
+
+    # scripts that run after cloning repositorys
+    install:
+      # by default, all script lines are interpreted as batch 
+      - echo This is batch
+      # batch commands start from cmd: 
+      - cmd: cd genius-app
+      - cmd: npm install -g
+      - cmd: npm install -g cordova
+      - cmd: cordova plugin remove cordova-plugin-browsersync
+      - cmd: cordova platform add windows
+      - cmd: cordova build windows -- --appx=uap
+      - cmd: copy C:\projects\igenius\genius-app\platforms\windows\AppPackages\CordovaApp.Windows10_1.0.0.0_anycpu_debug_Test\CordovaApp.Windows10_1.0.0.0_anycpu_debug.appx C:\projects\igenius
+    build_script:
+      #- cmd: dir C:\Windows\Microsoft.NET\Framework
+      #- cmd: C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild C:\projects\igenius\genius-app\platforms\windows\CordovaApp.Windows10.jsproj /p:Configuration=Debug
+      - cmd: cordova build windows -- --appx=uap
+      #- cmd: copy C:\projects\igenius\genius-app\platforms\windows\AppPackages\CordovaApp.Windows10_1.0.0.0_anycpu_debug_Test\CordovaApp.Windows10_1.0.0.0_anycpu_debug.appx C:\projects\igenius
+      - cmd: cd ..
+      - cmd: cd quiz-master
+        # to run script as a PowerShell command prepend it with ps:
+      - ps: Install-Product node $env:nodejs_version
+      - ps: Install-Product node 8 x64
+      - yarn
+      - yarn dist
+      - cmd: copy "C:\projects\igenius\quiz-master\dist\Quiz-Master Setup 0.0.1.exe" C:\projects\igenius
+      - cmd: dir C:\projects\igenius\quiz-master\dist\
+      - cmd: cd C:\projects\igenius\
+      - cmd: 7z a myapp.zip "CordovaApp.Windows10_1.0.0.0_AnyCPU_Debug.appx"
+      - cmd: 7z a myapp.zip "Quiz-Master Setup 0.0.1.exe"
+      test: off
+      artifacts:
+        - path: myapp.zip
+          name: QuizWindows10
+      deploy:
+        release: v$(APPVEYOR_REPO_TAG_NAME)
+        description: 'Windows Universal App'
+        provider: GitHub
+        auth_token:
+          secure: c/lXAytCIOqiw0TYXn2QtcrMzjhSWbE0wO9M2CJiOy2v2QoS2aMWB4zTV2Ud6xbB # your encrypted token from GitHub
+          #/.*\.appx/            # upload all NuGet packages to release assets
+        draft: true
+        prerelease: false
+        on:
+          branch: master                 # release from master branch only
+          appveyor_repo_tag: true
