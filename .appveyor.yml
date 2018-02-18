@@ -11,8 +11,8 @@ branches:
   - master
 matrix:
   #Electron Shit
-  - platform:
-      - x64
+  - platform: x32
+  - platform: x64
       
       install:
       - ps: Install-Product node $env:nodejs_version $env:platform
