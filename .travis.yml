@@ -6,32 +6,40 @@ addons:
 #lets see how this works | creates to build jobs 
 matrix:
   include:
-    #android app 
-    - language: node_js
-      node_js: "6"
-      os:
-        - linux
-        - osx
-      dist: trusty
-      osx_image: xcode8.3
-      env:
-        - ELECTRON_CACHE=$HOME/.cache/electron
-      sudo: false
-      branches:
-        only:
-          - master
-      install:
-        - sudo apt-get install npm
-        - cd quiz-master
-        - npm install
-        - npm update
-      script:
-        #- sudo cordova prepare
-        - npm run make
-      after_success:
-        - npm run publish
-      release:
-        - exit 0
+    #Electron Publish for Linux and Mac OS
+    language: node_js
+    node_js: "6"
+    os:
+    - linux
+    - osx
+    dist: trusty
+    osx_image: xcode8.3
+    sudo: false
+
+    cache:
+      directories:
+      - node_modules
+      - $HOME/.cache/electron
+
+    addons:
+      apt:
+        packages:
+        - fakeroot
+        - rpm
+
+    branches:
+      only:
+      - master
+      - /^v\d+\.\d+\.\d+/
+
+    install:
+    - cd quiz-master
+    - npm install
+    - npm update
+
+    script:
+    - npm run make
+    after_success: npm run publish
           
     #android app 
     - language: android

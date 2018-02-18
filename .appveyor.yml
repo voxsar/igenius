@@ -1,0 +1,26 @@
+platform:
+- x64
+environment:
+  nodejs_version: "6"
+cache:
+- '%APPDATA%\npm-cache'
+- '%USERPROFILE%\.electron'
+- node_modules
+branches:
+  only:
+  - master
+install:
+- ps: Install-Product node $env:nodejs_version $env:platform
+- set PATH=%APPDATA%\npm;%PATH%
+- npm install
+- npm update
+
+test_script:
+- cd quiz-master
+- node --version
+- npm --version
+#- npm run lint
+- npm run make
+
+build_script:
+- npm run publish
