@@ -1,0 +1,136 @@
+*   [31m9ec373d	[32m (HEAD -> master)[0m Merge branch 'develop' chained update up the branches
+[31m|[m[32m\[m  
+[31m|[m *   [31me359ee5	[32m (develop)[0m Merge branch 'quiz-master' into develop chained merge up the branches
+[31m|[m [31m|[m[34m\[m  
+[31m|[m[31m/[m [34m/[m  
+[31m|[m *   [31m92f8b62	[32m (quiz-master)[0m Merge branch 'ui-structure' into quiz-master mergeing the pulls
+[31m|[m [31m|[m[36m\[m  
+[31m|[m[31m/[m [36m/[m  
+[31m|[m *   [31mea6758c	[32m[0m Merge branch 'master' of https://github.com/voxsar/igenius into ui-structure
+[31m|[m [1;31m|[m[1;32m\[m  
+[31m|[m [1;31m|[m * [31m4b3c907	[32m (origin/master)[0m appveyor2
+[31m|[m [1;31m|[m * [31m51773ed	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31mb4acd4e	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m8b1d5ec	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m8e253cf	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m59be79a	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31me2dd1df	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m8ac64d7	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m7ccf7f7	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m5417d15	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m20addcd	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m29dae32	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m11e9b23	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m754aa50	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m4258933	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m7aefdca	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m72b8699	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31me95f1e8	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31mbd43b19	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m9f69063	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m31b7a21	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m196f6f6	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m628328f	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31mcd53c41	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31md455393	[32m[0m appveyor2
+[31m|[m [1;31m|[m * [31m2af7925	[32m[0m appveyor
+[31m|[m [1;31m|[m * [31m8b88cf7	[32m[0m appveyor
+[31m|[m [1;31m|[m * [31m7759f26	[32m[0m appveyor
+[31m|[m [1;31m|[m * [31md423185	[32m[0m moved back to node
+[31m|[m [1;31m|[m * [31m0cc3238	[32m[0m moved back to node
+[31m|[m [1;31m|[m * [31m2c3e524	[32m[0m well this happened
+[31m|[m [1;31m|[m * [31mf2df9c5	[32m[0m well this happened
+[31m|[m [1;31m|[m * [31mdfb93b1	[32m[0m well this happened
+[31m|[m [1;31m|[m *   [31m731b6a7	[32m[0m Merge branch 'develop' Move index to new folder main, pouchdb masterable movement
+[31m|[m [1;31m|[m [1;33m|[m[1;34m\[m  
+[31m|[m [1;31m|[m [1;33m|[m * [31m2c67d53	[32m (origin/develop)[0m added pouchdb and admin interface
+[31m|[m [1;31m|[m [1;33m|[m[1;33m/[m  
+[31m|[m * [1;33m|[m [31md9d40f6	[32m[0m d
+[31m|[m * [1;33m|[m   [31mfe7780b	[32m[0m Merge branch 'develop' of https://github.com/voxsar/igenius into ui-structure d
+[31m|[m [31m|[m[1;33m\[m [1;33m\[m  
+[31m|[m[31m/[m [1;33m/[m [1;33m/[m  
+[31m|[m [1;33m|[m [1;33m_[m   
+[31m|[m * [31m97974c5	[32m (origin/quiz-master-uimock)[0m [skip ci] quiz-master
+[31m|[m * [31m4c51db0	[32m[0m [skip ci] added a html framework ui
+* [31m0499f8e	[32m[0m added electron js stuff
+* [31m12eb8f9	[32m (tag: v0.0.13)[0m repo true build hpy2
+* [31m9cc28d6	[32m (tag: v0.0.12)[0m repo true build hpy1
+* [31m9b3b2fd	[32m (tag: v0.0.11)[0m repo true build hpy
+* [31m412ab7c	[32m (tag: v0.0.10)[0m repo true build happy
+* [31mb5316e8	[32m (tag: v0.0.9)[0m repo true build kll
+* [31mb14c4db	[32m[0m repo true build kll
+* [31mb5a958c	[32m[0m repo true build kll
+* [31md7aa614	[32m[0m repo true build kll
+* [31m04ecbd0	[32m (tag: v0.0.8)[0m repo true build kl
+* [31m13ad558	[32m (tag: v0.0.7)[0m repo true build ll
+* [31mb1cc687	[32m (tag: v0.0.6)[0m repo true build l
+* [31m7703c6d	[32m (tag: v0.0.5)[0m repo true build
+* [31m462c93d	[32m[0m g
+* [31m277a5ec	[32m[0m g
+* [31m26d7dd8	[32m[0m g
+* [31m4d0ecb0	[32m[0m g
+* [31m7686849	[32m[0m g
+* [31me33ec8c	[32m[0m g
+* [31m0a03cf0	[32m[0m g
+* [31mca20c97	[32m[0m g
+* [31m66f5eb3	[32m[0m g
+* [31m580e6cc	[32m[0m g
+* [31m554c20b	[32m[0m g
+* [31mdc10d12	[32m[0m f
+* [31m7d75d5d	[32m[0m e
+* [31m13d9589	[32m[0m d
+* [31m3dd9c6d	[32m[0m dc
+* [31meed6d71	[32m[0m d
+* [31m9c67ce0	[32m[0m c
+* [31m3471b4a	[32m[0m Update package.json
+* [31me83f205	[32m[0m Update appveyor.yml
+* [31m1a30244	[32m[0m Update appveyor.yml
+* [31mc5aae15	[32m[0m Update appveyor.yml
+* [31maa11b29	[32m[0m Update appveyor.yml
+* [31md316878	[32m[0m Update appveyor.yml
+* [31m6656d03	[32m[0m Update appveyor.yml
+* [31mb15f7fd	[32m[0m Update .travis.yml
+* [31ma1f1574	[32m[0m Update .travis.yml
+* [31mf9d8028	[32m[0m Update .travis.yml
+* [31m4d9422a	[32m[0m Update .travis.yml
+* [31mebefdbc	[32m[0m Update .travis.yml
+* [31m54b36ce	[32m[0m Update .travis.yml
+* [31m880fb02	[32m[0m Update .travis.yml
+* [31mfd77c35	[32m[0m Update .travis.yml
+* [31mafb01c5	[32m[0m Update .travis.yml
+* [31m42b7336	[32m[0m Update .travis.yml
+* [31m5f89ad1	[32m[0m Update package.json
+* [31m39dd71e	[32m[0m Update package.json
+* [31mf5590c3	[32m[0m Update .travis.yml
+* [31md075316	[32m[0m Update .travis.yml
+* [31md7ce92c	[32m[0m Update package.json
+* [31m7ac6ec3	[32m[0m Update .travis.yml
+[1;36m|[m *   [31m661155f	[32m (refs/stash)[0m WIP on master: ea29c09 data
+[1;36m|[m [1;36m|[m[32m\[m  
+[1;36m|[m[1;36m/[m [32m/[m  
+[1;36m|[m * [31m1d44cb9	[32m[0m index on master: ea29c09 data
+[1;36m|[m[1;36m/[m  
+* [31mea29c09	[32m[0m data
+* [31m4221780	[32m (tag: v0.0.4, tag: v0.0.3)[0m sentiment
+* [31m0a61f2c	[32m[0m c
+* [31m0c87c3e	[32m (tag: v0.0.2, tag: v0.0.1)[0m updated appve
+* [31m3c23e6a	[32m[0m remove platform
+* [31mcdd61dd	[32m[0m appveyor
+* [31mff7324a	[32m[0m add windows
+* [31m0b95ff3	[32m[0m plugins added browser sync
+* [31m2ef7f01	[32m[0m [skip ci] added javascript style gudie to readme
+* [31m273c5d3	[32m[0m added appveyor test build [skip ci]
+* [31m508ef23	[32m[0m added appveyor test build [skip ci]
+* [31m87bf3f6	[32m[0m added browser platform [skip ci]
+* [31m7c73ed9	[32m[0m added android platform [skip ci]
+* [31mc8a34a1	[32m[0m Update .travis.yml
+* [31m24a089f	[32m[0m Update README.md
+* [31m4f03345	[32m[0m Create .travis.yml
+* [31m840a43e	[32m[0m Update README.md
+* [31mb9cf26a	[32m[0m minor
+* [31m7b9e94f	[32m[0m facebook messenger api access
+* [31m681d505	[32m[0m electron based quiz master application
+* [31m19260d8	[32m[0m mobile cordova application skeleton
+* [31m0546b82	[32m[0m Hyperlinks, Authors and Contributors
+* [31m3f18939	[32m[0m Description and Structure Information
+* [31mb2c3128	[32m[0m Initial commit
