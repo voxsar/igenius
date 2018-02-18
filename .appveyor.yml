@@ -2,7 +2,6 @@ environment:
   nodejs_version: "6"
   GITHUB_TOKEN:
     secure: 3VuYvENsIR/k2gXPfn19F9UHaja7TLad6arKNcb15oT9R1dMnZ2y4dNCtLMmnOcM
-  image: Visual Studio 2017
 cache:
   - '%APPDATA%\npm-cache'
   - '%USERPROFILE%\.electron'
@@ -19,7 +18,7 @@ install:
   #- cmd: set PATH=%APPDATA%\npm;%PATH%
   #- cmd: dir %APPDATA%\npm
   - cmd: cd quiz-master
-  - cmd: npm install -g
+  - cmd: npm install
   - cmd: npm update
     # by default, all script lines are interpreted as batch 
   - cmd: cd ..
