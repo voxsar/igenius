@@ -27,7 +27,6 @@ matrix:
         - npm update
       script:
         #- sudo cordova prepare
-        - npm run lint
         - npm run make
       after_success:
         - npm run publish

@@ -63,3 +63,11 @@
     "eslint-plugin-react": "^7.6.1"
   }
 }
+// github
+{
+  // Assume the GitHub repository is at https://github.com/username/repo
+  "github_repository": {
+    "owner": "voxsar",
+    "name": "iGenius"
+  }
+}
