@@ -15,7 +15,7 @@ branches:
 
 install:
   - ps: Install-Product node $env:nodejs_version $env:platform
-  #- cmd: set PATH=%APPDATA%\npm;%PATH%
+  - cmd: set PATH=%APPDATA%\npm;%PATH%
   #- cmd: dir %APPDATA%\npm
   - cmd: cd quiz-master
   - cmd: npm install
