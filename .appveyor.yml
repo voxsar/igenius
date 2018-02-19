@@ -14,14 +14,14 @@ branches:
   only:
   - master
 install:
-- ps: Install-Product node $env:nodejs_version $env:platform
-- set PATH=%APPDATA%\npm;%PATH%
 - cd quiz-master
 - ps: $configFile = "package.json"
 - ps: $j = Get-Content $configFile | ConvertFrom-Json
 - ps: $j.name = $j.name+"$env:platform"
 - ps: $j | ConvertTo-Json | set-content $configFile
-- ps: echo $configFile
+- ps: echo Get-Content $configFile 
+- ps: Install-Product node $env:nodejs_version $env:platform
+- set PATH=%APPDATA%\npm;%PATH%
 - npm install
 - npm update
 
